@@ -1,0 +1,69 @@
+* {
+    font-family: "Terminess Nerd Font";
+    font-size: 12px;
+    font-weight: bold;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+}
+
+window#waybar {
+    background-color: #000000;
+    color: #ffffff;
+    /* Línea base de 1px que separa el panel de tus ventanas flotantes */
+    border-bottom: 1px solid #ffffff;
+}
+
+/* Espacios de Trabajo (Workspaces) */
+#workspaces button {
+    padding: 0 14px;
+    background-color: transparent;
+    color: #666666;
+    border-right: 1px solid #222222;
+}
+
+#workspaces button.focused {
+    color: #000000;
+    background-color: #ffffff;
+}
+
+#workspaces button:hover {
+    background-color: #111111;
+    color: #ffffff;
+}
+
+#workspaces button.urgent {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Ventana Activa (Centro) */
+#window {
+    color: #ffffff;
+    background-color: transparent;
+    padding: 0 10px;
+}
+
+/* Módulos de Información (Derecha) */
+#clock, #cpu, #memory, #pulseaudio, #tray {
+    padding: 0 12px;
+    color: #ffffff;
+    background-color: transparent;
+}
+
+/* Separadores verticales finos al estilo del repositorio original */
+#cpu, #memory, #pulseaudio, #clock {
+    border-left: 1px solid #222222;
+}
+
+#tray {
+    border-left: 1px solid #222222;
+}
+
+/* Modo de Redimensionado o Alertas de Sway */
+#mode {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 0 12px;
+}

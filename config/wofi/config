@@ -1,0 +1,10 @@
+# Configuración de Wofi - Estilo Zero Mono Light
+show=drun
+allow_images=false
+insensitive=true
+run-always_parse_args=true
+width=400
+lines=10
+location=center
+prompt=Buscar aplicaciones...
+stylesheet=style.css

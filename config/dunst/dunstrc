@@ -1,0 +1,59 @@
+[global]
+    ### Estructura y Geometría ###
+    monitor = 0
+    follow = mouse
+    width = 300
+    height = 100
+    origin = top-right
+    offset = 20x50
+    scale = 0
+    
+    # Diseño retro consistente con i3, Polybar y Rofi
+    corner_radius = 0
+    border_size = 1
+    frame_color = "#ffffff"
+    separator_color = "#555555"
+    
+    ### Tipografía y Texto ###
+    font = Terminess Nerd Font 10
+    line_height = 0
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
+    show_age_threshold = 60
+    word_wrap = true
+    ignore_newline = false
+    stack_duplicates = true
+    hide_duplicate_count = false
+    
+    ### Iconos ###
+    # Desactivados para evitar que rompan la paleta monocromática
+    icon_position = off
+
+    ### Historial y Control ###
+    sticky_history = true
+    history_length = 20
+    
+    ### Interactividad ###
+    mouse_left_click = close_current
+    mouse_middle_click = close_all
+    mouse_right_click = context
+
+# --- Niveles de Alerta (Paleta Escalonada) ---
+
+[urgency_low]
+    background = "#0d0d0d"
+    foreground = "#555555"
+    timeout = 4
+
+[urgency_normal]
+    background = "#0d0d0d"
+    foreground = "#ffffff"
+    timeout = 6
+
+[urgency_critical]
+    # En lugar de rojo chillón, usamos inversión de contraste (estilo Rofi seleccionado)
+    background = "#ffffff"
+    foreground = "#0d0d0d"
+    frame_color = "#000000"
+    timeout = 0

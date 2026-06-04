@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>After the dawn, im happy.</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'monospace', monospace;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            width: 100%;
+            max-width: 900px;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        /* Contenedor del Texto Forzado Principal (Antiguo Reloj) */
+        #main-title {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+            min-height: 60px; /* Mantiene el espacio visual si está vacío */
+        }
+        
+        /* Contenedor del Mensaje Editable */
+        .note-container {
+            margin-bottom: 30px;
+        }
+        #editable-message {
+            font-size: 14px;
+            color: #555555;
+            border: none;
+            background: transparent;
+            text-align: center;
+            width: 100%;
+            outline: none;
+            font-family: 'monospace';
+            padding: 5px;
+            font-style: italic;
+        }
+        #editable-message:focus {
+            color: #000000;
+            border-bottom: 1px dashed #000000;
+            font-style: normal;
+        }
+
+        form {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ffffff;
+            background-color: #000000;
+            color: #000000;
+            font-family: 'monospace';
+            font-size: 16px;
+            outline: none;
+            text-align: center;
+        }
+        input[type="text"]:focus {
+            background-color: #fafafa;
+        }
+
+        /* Grid Expandido a 4 Columnas */
+        .bookmark-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: left;
+        }
+        .category {
+            border: 1px solid #000000;
+            padding: 15px;
+            background-color: #000000;
+        }
+        .category h3 {
+            font-size: 13px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #000000;
+            padding-bottom: 5px;
+            font-weight: bold;
+        }
+        .category ul {
+            list-style: none;
+        }
+        .category ul li {
+            margin: 8px 0;
+        }
+        .category ul li a {
+            color: #666666;
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .category ul li a:hover {
+            color: #000000;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Texto Forzado Principal (Escribe lo que quieras entre las etiquetas div) -->
+        <div id="main-title"></div>Welcome back, my dear user. I was waiting for you.
+
+        <!-- Mensaje Editable Dinámico desde el Navegador -->
+        <div class="note-container">
+            <input type="text" id="editable-message" placeholder="[ Haz clic aquí para escribir una nota o recordatorio ]" maxlength="100">
+        </div>
+
+        <!-- Motor de Búsqueda -->
+        <form action="https://www.google.com/search" method="get">
+            <input type="text" name="q" placeholder="What sort of ending are you wishing for?" autofocus autocomplete="off">
+        </form>
+
+        <!-- Panel de Marcadores Completo -->
+        <div class="bookmark-grid">
+            
+            <!-- Columna 1: Desarrollo -->
+            <div class="category">
+                <h3>// dev</h3>
+                <ul>
+                    <li><a href="https://github.com">GitHub</a></li>
+                    <li><a href="https://gitlab.com">GitLab</a></li>
+                    <li><a href="https://stackoverflow.com">StackOverflow</a></li>
+                    <li><a href="https://chatgpt.com">ChatGPT</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 2: Comunidades -->
+            <div class="category">
+                <h3>// boards</h3>
+                <ul>
+                    <li><a href="https://reddit.com/r/unixporn">r/unixporn</a></li>
+                    <li><a href="https://reddit.com/r/linuxmint">r/linuxmint</a></li>
+                    <li><a href="https://news.ycombinator.com">HackerNews</a></li>
+                    <li><a href="https://4chan.org/g/">/g/ - Tech</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: Media & Ocio -->
+            <div class="category">
+                <h3>// media</h3>
+                <ul>
+                    <li><a href="https://youtube.com">YouTube</a></li>
+                    <li><a href="https://twitch.tv">Twitch</a></li>
+                    <li><a href="https://spotify.com">Spotify</a></li>
+                    <li><a href="https://soundcloud.com">SoundCloud</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 4: Servicios -->
+            <div class="category">
+                <h3>// system</h3>
+                <ul>
+                    <li><a href="https://gmail.com">Proton / Gmail</a></li>
+                    <li><a href="https://drive.google.com">Cloud Drive</a></li>
+                    <li><a href="https://maps.google.com">Maps</a></li>
+                    <li><a href="https://translate.google.com">Translate</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Lógica del Mensaje Editable Persistente (Nota Inferior)
+        const messageInput = document.getElementById('editable-message');
+        
+        window.addEventListener('load', () => {
+            const savedMessage = localStorage.getItem('user_startpage_note');
+            if (savedMessage) {
+                messageInput.value = savedMessage;
+            }
+        });
+
+        messageInput.addEventListener('input', () => {
+            localStorage.setItem('user_startpage_note', messageInput.value);
+        });
+    </script>
+</body>
+</html>
