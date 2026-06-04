@@ -47,4 +47,4 @@ Side effects of using valmier include:
 - <img width="1366" height="768" alt="screenshot_20260601_201117" src="https://github.com/user-attachments/assets/3eddf517-278a-495a-8190-df672a42393b" />
 
 ---
-*Created by Tolepi, a person who clearly has an unhealthy relationship with the 'Grayscale' setting
+*Created by Tolepi, a person who clearly has an unhealthy relationship with the bg: #000000 and fg: #ffffff setting
