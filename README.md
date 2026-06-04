@@ -31,6 +31,8 @@ Side effects of using valmier include:
 * Extreme boredom.
 * Forgeting what the color green looks like.
 * Spending 5 hours a day moving a window 2 pixels to the left just to move it back.
+* You questioning why the fuck did you installed this rice
+* You uninstalling Sway as a whole
 
 ## I hate previews but here you go:
 
